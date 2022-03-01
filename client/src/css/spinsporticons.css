@@ -1,0 +1,460 @@
+
+@font-face {
+    font-family: spinsporticons;
+    src: url(spinsporticons.eot);
+    src: url(spinsporticons.eot) format("embedded-opentype"), url(spinsporticons.woff2) format("woff2"),
+        url(spinsporticons.woff) format("woff"), url(spinsporticons.svg) format("svg"),
+        url(spinsporticons.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+[data-icon]:after,
+[data-icon]:before {
+    font-family: spinsporticons !important;
+    content: attr(data-icon);
+    -moz-osx-font-smoothing: grayscale;
+}
+[class*=" icon-"]:after,
+[class*=" icon-"]:before,
+[class^="icon-"]:after,
+[class^="icon-"]:before {
+    font-family: spinsporticons !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-oddsup:before {
+    content: "\e006";
+}
+.icon-oddsdown:before {
+    content: "\e007";
+}
+.icon-mybets:before {
+    content: "\e008";
+}
+.icon-player-opencontrols:before {
+    content: "\e009";
+}
+.icon-player-play:before {
+    content: "\e00a";
+}
+.icon-player-unmuted:before {
+    content: "\e00b";
+}
+.icon-streamingnegative:before {
+    content: "\e00c";
+}
+.icon-streamingavailable:before {
+    content: "\e00d";
+}
+.icon-streaming:before {
+    content: "\e00e";
+}
+.icon-plus:before {
+    content: "\e010";
+}
+.icon-os-android:before {
+    content: "\e011";
+}
+.icon-empty-octagon:before {
+    content: "\e012";
+}
+.icon-freebetavailable:before {
+    content: "\e015";
+}
+.icon-os-apple:before {
+    content: "\e016";
+}
+.icon-promotions:before {
+    content: "\e017";
+}
+.icon-search:before {
+    content: "\e018";
+}
+.icon-os-windows:before {
+    content: "\e019";
+}
+.icon-hamburger:before {
+    content: "\e01a";
+}
+.icon-padlock:before {
+    content: "\e01e";
+}
+.icon-self-exclude:before {
+    content: "\e01f";
+}
+.icon-settings:before {
+    content: "\e020";
+}
+.icon-pagination:before {
+    content: "\e021";
+}
+.icon-information:before {
+    content: "\e022";
+}
+.icon-changepassword:before {
+    content: "\e024";
+}
+.icon-ios6appprompt:before {
+    content: "\e025";
+}
+.icon-social-facebook:before {
+    content: "\e028";
+}
+.icon-player-closecontrols:before {
+    content: "\e029";
+}
+.icon-ios7appprompt:before {
+    content: "\e02a";
+}
+.icon-channel-casino:before {
+    content: "\e02b";
+}
+.icon-channel-inplay:before {
+    content: "\e02c";
+}
+.icon-live-chat:before {
+    content: "\e02d";
+}
+.icon-player-maximise:before {
+    content: "\e02e";
+}
+.icon-social-googleplus:before {
+    content: "\e02f";
+}
+.icon-social-twitter:before {
+    content: "\e030";
+}
+.icon-player-minimise:before {
+    content: "\e031";
+}
+.icon-minus:before {
+    content: "\e032";
+}
+.icon-channel-sports:before {
+    content: "\e033";
+}
+.icon-myaccount:before {
+    content: "\e035";
+}
+.icon-player-muted:before {
+    content: "\e036";
+}
+.icon-statistics:before {
+    content: "\e037";
+}
+.icon-rating:before {
+    content: "\e038";
+}
+.icon-profile:before {
+    content: "\e039";
+}
+.icon-turbo:before {
+    content: "\e03a";
+}
+.icon-timeform:before,
+.icon-timeformAfter:after {
+    content: "\e03b";
+}
+.icon-envelope:before {
+    content: "\e03c";
+}
+.icon-phone:before {
+    content: "\e03d";
+}
+.icon-inplay:before {
+    content: "\e03e";
+}
+.icon-logout:before {
+    content: "\e03f";
+}
+.icon-betwayplus:before {
+    content: "\e023";
+}
+.icon-openbets:before {
+    content: "\e026";
+}
+.icon-settledbets:before {
+    content: "\e027";
+}
+.icon-withdrawal:before {
+    content: "\e041";
+}
+.icon-deposit:before {
+    content: "\e002";
+}
+.icon-roulette:before {
+    content: "\e003";
+}
+.icon-more:before {
+    content: "\e042";
+}
+.icon-arrow-left:before {
+    content: "\e001";
+}
+.icon-arrow-right:before {
+    content: "\e004";
+}
+.icon-arrow-up:before {
+    content: "\e013";
+}
+.icon-back:before {
+    content: "\e014";
+}
+.icon-backtostart:before {
+    content: "\e01b";
+}
+.icon-cross:before,
+.icon-crossAfter:after {
+    content: "\e034";
+}
+.icon-tick:before {
+    content: "\e00f";
+}
+.icon-dropdownarrows:before {
+    content: "\e005";
+}
+.icon-transactionhistory:before {
+    content: "\e043";
+}
+.icon-arrow-down:before {
+    content: "\e000";
+}
+.icon-blackjack:before {
+    content: "\e044";
+}
+.icon-calendar:before {
+    content: "\e045";
+}
+.icon-view:before {
+    content: "\e046";
+}
+.icon-home:before {
+    content: "\e01d";
+}
+.icon-hide:before {
+    content: "\e047";
+}
+.icon-gamehistory:before {
+    content: "\e048";
+}
+.icon-cashout:before {
+    content: "\e040";
+}
+.icon-slots:before {
+    content: "\e049";
+}
+.icon-horseracing:before {
+    content: "\e04b";
+}
+.icon-thumbs-o-down:before {
+    content: "\e04c";
+}
+.icon-thumbs-o-up:before {
+    content: "\e04d";
+}
+.icon-betslip:before {
+    content: "\e01c";
+}
+.icon-external-link:before,
+.icon-externallink:before {
+    content: "\e04e";
+}
+.icon-share:before {
+    content: "\e04f";
+}
+.icon-refresh:before {
+    content: "\e050";
+}
+.icon-popout:before {
+    content: "\e051";
+}
+.icon-horseracing-results:before {
+    content: "\e052";
+}
+.icon-slider:before {
+    content: "\e053";
+}
+.icon-safari:before {
+    content: "\e054";
+}
+.icon-chrome:before {
+    content: "\e055";
+}
+.icon-edge:before {
+    content: "\e056";
+}
+.icon-ie:before {
+    content: "\e057";
+}
+.icon-opera:before {
+    content: "\e058";
+}
+.icon-firefox:before {
+    content: "\e059";
+}
+.icon-repeat:before {
+    content: "\e05a";
+}
+.icon-overtime:before {
+    content: "\e05b";
+}
+.icon-dice:before {
+    content: "\e05c";
+}
+.icon-warning:before {
+    content: "\e05d";
+}
+.icon-jackpot-games:before {
+    content: "\e05e";
+}
+.icon-american-football:before {
+    content: "\e05f";
+}
+.icon-tennis:before {
+    content: "\e060";
+}
+.icon-table-games:before {
+    content: "\e061";
+}
+.icon-results:before {
+    content: "\e062";
+}
+.icon-world-cup:before {
+    content: "\e063";
+}
+.icon-line-graph:before {
+    content: "\e064";
+}
+.icon-keypad-delete:before {
+    content: "\e065";
+}
+.icon-error-cross:before {
+    content: "\e066";
+}
+.icon-more-stats:before {
+    content: "\e067";
+}
+.icon-hash:before {
+    content: "\e068";
+}
+.icon-favourite:before {
+    content: "\e06a";
+}
+.icon-favourite-outline:before {
+    content: "\e06b";
+}
+.icon-recently-played:before {
+    content: "\e078";
+}
+.icon-bankid:before,
+.icon-bankidAfter:after {
+    content: "\e069";
+}
+.icon-exclamation:before,
+.icon-playerVerification:before {
+    content: "\e06e";
+}
+.icon-choose-leagues:before,
+.icon-choose-leaguesAfter:after {
+    content: "\e06d";
+}
+.icon-undo:before {
+    content: "\e070";
+}
+.icon-safer-gambling:before {
+    content: "\e904";
+}
+.icon-void:before {
+    content: "\e071";
+}
+.icon-win-boost:before {
+    content: "\e072";
+}
+.icon-refine-search:before {
+    content: "\e073";
+}
+.icon-double-arrow-left:before {
+    content: "\e07c";
+}
+.icon-double-arrow-right:before {
+    content: "\e07d";
+}
+.icon-share-android:before {
+    content: "\e07b";
+}
+.icon-betway-boosts:before {
+    content: "\e07e";
+}
+.icon-play:before {
+    content: "\e07f";
+}
+.icon-download:before {
+    content: "\e080";
+}
+.icon-notification:before {
+    content: "\e081";
+}
+.icon-delete:before {
+    content: "\e082";
+}
+.icon-faq:before {
+    content: "\e083";
+}
+.icon-over18:before {
+    content: "\e084";
+}
+.icon-stophand:before {
+    content: "\e085";
+}
+.icon-home-dockedmenu:before {
+    content: "\e086";
+}
+.icon-sms-verification:before {
+    content: "\e087";
+}
+.icon-football:before {
+    content: "\e04a";
+}
+.icon-following-feed:before {
+    content: "\e088";
+}
+.icon-tournaments:before {
+    content: "\e901";
+}
+.icon-create-syndicate:before {
+    content: "\e902";
+}
+.icon-my-syndicates:before {
+    content: "\e903";
+}
+.icon-wallet:before {
+    content: "\e927";
+}
+.icon-pending-withdrawals:before {
+    content: "\e900";
+}
+.icon-filter:before {
+    content: "\e92c";
+}
+.iconHolder [class*=" icon-"],
+.iconHolder [class^="icon-"] {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.iconHolder [class*=" icon-"]:before,
+.iconHolder [class^="icon-"]:before {
+    font-size: 20px;
+    height: 20px;
+    color: #fff;
+}
+.locked .icon-freebetavailable:before {
+    content: "\e01e";
+    color: #00a826;
+}
