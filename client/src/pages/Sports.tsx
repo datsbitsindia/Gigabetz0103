@@ -7,7 +7,6 @@ import "../css/Interface_Normal.woff2";
 import "../css/Interface_Bold.woff2";
 import "../css/demo.css";
 
-
 const Sports = () => {
   return (
     <div>

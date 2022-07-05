@@ -64,6 +64,7 @@ const Leagues = (props: any) => {
 
   const tableParser = (rawData: any) => {
     SubmitJsonData(rawData, 1);
+    SubmitResultData();
     const aTables = [];
     let table: any;
     let row = -1;
@@ -128,10 +129,58 @@ const Leagues = (props: any) => {
     if (table && table?.title !== aTables[aTables.length - 1]?.title) {
       aTables.push(table);
     }
-    // console.log("atables", aTables);
     SubmitJsonData(aTables, 2);
     return aTables;
   };
+
+  // const TABLE_CONSTANTS = {
+  //   MG: "MG", // Market Group, table title
+  //   MA: "MA", // Market, Table Row
+  //   PA: "PA", // Participant, Table Row Column
+  //   NA: "NA", // Name
+  // };
+
+  // const tableParser = (rawData: any) => {
+  //   const aTables = [];
+  //   let table;
+  //   let column = -1;
+
+  //   rawData.forEach(({ type, ...rest }) => {
+  //     switch (type) {
+  //       case TABLE_CONSTANTS.MG:
+  //         if (table) {
+  //           column = -1;
+  //           aTables.push(table);
+  //         }
+  //         table = { ...rest };
+  //         break;
+
+  //       case TABLE_CONSTANTS.MA:
+  //         column++;
+  //         if (!table["Column"]) {
+  //           table["Column"] = [{ ...rest, ROWS: [] }];
+  //         } else {
+  //           table["Column"].push({ ...rest, ROWS: [] });
+  //         }
+  //         break;
+
+  //       case TABLE_CONSTANTS.PA:
+  //         {
+  //           table["Column"][column]["ROWS"].push({ ...rest });
+  //         }
+  //         break;
+
+  //       default:
+  //         break;
+  //     }
+  //   });
+
+  //   if (Object.keys(table).length) {
+  //     aTables.push(table);
+  //   }
+  //   console.log(aTables);
+  //   return aTables;
+  // };
 
   const leagueParser = (rawData: any) => {
     let LeagueData = [];
@@ -152,26 +201,27 @@ const Leagues = (props: any) => {
 
   const getMatchesData = async () => {
     // uncomment for api
-    console.log(currentMatchId);
-    if (currentMatchId) {
-      const [err, result] = await asyncWrap(
-        axios.get(`/api/matches?match_id=${currentMatchId}`)
-      );
-      if (err) {
-        return message.error({
-          content: "something went wrong",
-          style: { margintop: "5vh" },
-        });
-      }
-      setTableData(tableParser(result.data.data.results[0]));
-      setgamedata(result.data.data.results[0]);
-    }
+    // console.log(currentMatchId);
+    // if (currentMatchId) {
+    //   const [err, result] = await asyncWrap(
+    //     axios.get(`/api/matches?match_id=${currentMatchId}`)
+    //   );
+    //   if (err) {
+    //     return message.error({
+    //       content: "something went wrong",
+    //       style: { margintop: "5vh" },
+    //     });
+    //   }
+    //   setTableData(tableParser(result.data.data.results[0]));
+    //   newParser(result.data.data.results[0]);
+    //   setgamedata(result.data.data.results[0]);
+    // }
 
     // comment if there is api
-    // if (currentMatchId) {
-    //   setTableData(tableParser(matchdata[0]));
-    //   setgamedata(matchdata[0]);
-    // }
+    if (currentMatchId) {
+      setTableData(tableParser(matchdata[0]));
+      setgamedata(matchdata[0]);
+    }
   };
 
   const getMatchesScore = async (Id) => {
@@ -189,23 +239,23 @@ const Leagues = (props: any) => {
 
   const getData = async () => {
     // uncomment this for api
-    const [err, result] = await asyncWrap(
-      axios.get(`/api/sports?sports_id=${sportsid}`)
-    );
-    if (err) {
-      return message.error({
-        content: "something went wrong",
-        style: { margintop: "5vh" },
-      });
-    }
+    // const [err, result] = await asyncWrap(
+    //   axios.get(`/api/sports?sports_id=${sportsid}`)
+    // );
+    // if (err) {
+    //   return message.error({
+    //     content: "something went wrong",
+    //     style: { margintop: "5vh" },
+    //   });
+    // }
 
-    // for api
-    setLeagueList(leagueParser(result.data.data.results));
-    setLeagues(result.data.data.results);
+    // // for api
+    // setLeagueList(leagueParser(result.data.data.results));
+    // setLeagues(result.data.data.results);
 
     //for raw data
-    // setLeagueList(leagueParser(leaguesData));
-    // setLeagues(leaguesData);
+    setLeagueList(leagueParser(leaguesData));
+    setLeagues(leaguesData);
   };
 
   const SubmitJsonData = async (json, id) => {
@@ -218,8 +268,15 @@ const Leagues = (props: any) => {
     const [error, result] = await asyncWrap(axios.post("json-result", data));
     if (!result) {
       console.log(error);
-    } else {
-      console.log(result);
+    }
+  };
+
+  const SubmitResultData = async () => {
+    const [error, result] = await asyncWrap(
+      axios.get(`/api/result?match_id=${currentMatchId}&sportId=${sportsid}`)
+    );
+    if (!result) {
+      console.log(error);
     }
   };
 
@@ -230,7 +287,7 @@ const Leagues = (props: any) => {
           return (
             <>
               <div
-                className="col-lg-8 "
+                className="col-lg-8"
                 onClick={() => setCurrentMatchId(item.id)}
               >
                 <div
@@ -247,8 +304,8 @@ const Leagues = (props: any) => {
                   >
                     {item.home.name} - {item.away.name}
                   </p>
-                  <div className=" icon-red icon-cashout" />
-                  <div className=" icon-red icon-channel-inplay " />
+                  {/* <div className=" icon-red icon-cashout" />
+                  <div className=" icon-red icon-channel-inplay " /> */}
                 </div>
               </div>
               <MatchScore matchId={item.id} sportId={sportsid} />
@@ -365,7 +422,6 @@ const Leagues = (props: any) => {
   };
 
   const calculate = (odValue) => {
-    console.log(odValue);
     let some = odValue.split(",");
     let result = 1;
     for (let i = 0; i < some.length; i++) {
@@ -393,13 +449,6 @@ const Leagues = (props: any) => {
                       <div class="row align-items-center">
                         <div class="col-lg-6">
                           <span>{col}</span>
-                          {/* <a
-                          class="card-link d-flex align-items-center"
-                          data-toggle="collapse"
-                          href="#collapsefortin"
-                        >
-                          <p class=" icon-arrow-down"></p>
-                        </a> */}
                           <div class="data-text"></div>
                         </div>
                       </div>
@@ -464,9 +513,6 @@ const Leagues = (props: any) => {
                                             ) : (
                                               ""
                                             )}
-                                            {/* <p class="border">
-                                              {calculate(od[key])}
-                                            </p> */}
                                           </div>
                                         </div>
                                       </div>
@@ -512,7 +558,6 @@ const Leagues = (props: any) => {
   // useEffect(() => {
   //   var interval = setInterval(() => {
   //     getMatchesData();
-  //     setCurrentMatchId("");
   //     setTableData([]);
   //   }, 5000);
   // }, [currentMatchId]);
@@ -535,6 +580,7 @@ const Leagues = (props: any) => {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            color: "#9e9e9e",
           }}
         >
           <p>Home</p>
@@ -568,31 +614,40 @@ const Leagues = (props: any) => {
             fontWeight: 800,
             maxHeight: "500px",
             overflow: "auto",
+            border: "1px solid rgba(90 90 90)",
           }}
           headStyle={{
             fontSize: "13px",
-            color: "#fff",
+            color: "#9e9e9e",
             fontWeight: 800,
+            border: "1px solid rgba(90 90 90)",
           }}
         >
           <Row>
-            {leagueList.map((item, i) => (
+            {leagueList.slice(0, 8).map((item, i) => (
               <Col lg={12}>
                 <div className="card-body">
-                  <div className="data-wrapper">
-                    <Button
+                  <div
+                    className="data-wrapper"
+                    style={{
+                      backgroundColor: "#434c5b",
+                      padding: "0 10px",
+                      margin: "0.5px",
+                      borderBottom: "1px solid rgba(90 90 90) !important",
+                      display: "flex",
+                    }}
+                  >
+                    <p
                       onClick={() => setMatchId(item.id)}
                       style={{
-                        backgroundColor: "#2f3541",
                         fontSize: "13px",
-                        color: "#a3a3a3",
+                        color: "#9e9e9e",
                         fontWeight: 800,
                         marginBottom: "10px",
-                        borderColor: "#2f3541",
                       }}
                     >
                       {item.name}
-                    </Button>
+                    </p>
                   </div>
                 </div>
               </Col>
@@ -604,47 +659,23 @@ const Leagues = (props: any) => {
           extra={extra()}
           headStyle={{
             fontSize: "13px",
-            color: "#fff",
+            color: "#9e9e9e",
             fontWeight: 800,
+            border: "1px solid rgba(90 90 90)",
           }}
           title="Matches"
           style={{
             backgroundColor: "#2f3541",
             marginTop: "20px",
+            border: "1px solid rgba(90 90 90)",
           }}
         >
           <div className="card-body">
             <div className="data-wrapper">
-              {/* <div> */}
-              {/* <div> */}
-              {/* <div class="row align-items-right"> */}
-              {/* <div class="col-lg-8"></div> */}
-              <div class="col-lg-4">
-                <div class="header-text d-flex">
-                  <p>Home</p>
-                  <p>Draw</p>
-                  <p>Away</p>
-                </div>
-              </div>
               <div className="row">{matchId && ShowMatchList()}</div>
-              {/* </div> */}
             </div>
           </div>
-          {/* </div>
-          </div> */}
         </Card>
-
-        {/* {leagueList.map((item, i) => (
-          <Collapse onChange={() => setMatchId(item.id)} destroyInactivePanel>
-            <Panel header={item.name} key={i} extra={extra()}>
-              <div className="card-body">
-                <div className="data-wrapper">
-                  <div className="row">{matchId && ShowMatchList()}</div>
-                </div>
-              </div>
-            </Panel>
-          </Collapse>
-        ))} */}
       </div>
       {tableData && AddTable()}
     </>

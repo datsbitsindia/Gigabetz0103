@@ -1536,7 +1536,7 @@ const AllSports = (props: any) => {
                           </div>
                         </OwlCarousel>
                       </div>
-                      <div className="live d-flex align-items-center justify-content-between">
+                      {/* <div className="live d-flex align-items-center justify-content-between">
                         <div className="header-tab">
                           <a href="#" className="bg-color">
                             Live Now
@@ -1546,9 +1546,9 @@ const AllSports = (props: any) => {
                         <div className="select">
                           <div className="icon-dropdownarrows" />
                         </div>
-                      </div>
-                      <div id="accordion">
-                        {/* <div className="card custom-card">
+                      </div> */}
+                      {/* <div id="accordion">
+                        <div className="card custom-card">
                           <div className="card-header custom-card-header">
                             <div className="row align-items-center">
                               <div className="col-lg-8">
@@ -1596,8 +1596,8 @@ const AllSports = (props: any) => {
                               </div>
                             </div>
                           </div>
-                        </div> */}
-                        {/* <div className="card custom-card">
+                        </div>
+                        <div className="card custom-card">
                           <div className="card-header custom-card-header">
                             <div className="row align-items-center">
                               <div className="col-lg-8">
@@ -1642,12 +1642,12 @@ const AllSports = (props: any) => {
                               </div>
                             </div>
                           </div>
-                        </div> */}
-                      </div>
-                      <div className="footer-link">
+                        </div>
+                      </div> */}
+                      {/* <div className="footer-link">
                         <a href="#">See more In-Play</a>
                         <span className=" icon-arrow-right" />
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   {/* <div className="highlight">

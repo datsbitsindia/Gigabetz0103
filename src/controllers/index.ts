@@ -17,3 +17,4 @@ export * from "./proxy/MatchesController";
 export * from "./signupController";
 export * from "./addBetController";
 export * from "./jsonResult";
+export * from "./proxy/ResultController";

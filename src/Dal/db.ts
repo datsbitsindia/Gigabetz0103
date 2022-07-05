@@ -10,8 +10,6 @@ require("dotenv").config();
 
 const { DB_PASSWORD, DB_USERNAME, DB_NAME, DB_SERVER } = process.env;
 
-console.log(DB_SERVER, DB_NAME, DB_USERNAME, DB_PASSWORD);
-
 var sqlConfig: sql.config = {
   user: DB_USERNAME,
   password: DB_PASSWORD,
